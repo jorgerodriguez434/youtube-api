@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Youtube API</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<form class='demo-form' action="/some-server-endpoint" method ='post'>
-		<legend> User Info</legend>
-		<label for="first-name"> First name </label>
+  
+  
+  
+  
+  <main role="main">
+  
+	<form class="youtube-search-form js-youtube-search-form" action="#">
+		<legend> Search Youtube Videos </legend>
+		<input placeholder="Enter something" type="text" class="js-query">
+		<button type="submit"> Search </button>
 	</form>
+	
+	
+	
+	
+	
+	
+	<!--testing submit button -->
+	<section role="region">
+	<div class="testing-search-button-result js-testing-search-button-result "> </div>
+	<button type="button" class="hide js-reset-button" > Reset </button>
+	</section>
+	</main>
+	
+	
+	
+	
+	
+
+	<script 
+		src="//code.jquery.com/jquery.min.js">
+	</script> 
+	<script 
+	src="youtube.js" type="text/javascript">
+	</script>
 </body>
 </html>
