@@ -48,8 +48,8 @@ function handleResetButton(){
   });
 }//handleResetButton
 function handleEveything(){
-	//handleSubmitButton();
-	//handleResetButton();
+	handleSubmitButton();
+	handleResetButton();
 	watchSubmit();
 }
 
