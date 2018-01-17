@@ -56,7 +56,11 @@ function handleResetButton(){
 function handleEveything(){
 	handleSubmitButton();
 	handleResetButton();
+<<<<<<< HEAD
 	//watchSubmit();
+=======
+	watchSubmit();
+>>>>>>> feature/youtube-form
 }
 
 $(handleEveything)
