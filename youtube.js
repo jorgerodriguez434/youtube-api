@@ -31,6 +31,12 @@ function watchSubmit() {
     getDataFromYouTubeApi(query, displayYouTubeSearchData);
   });
 }
+
+
+
+
+
+
 function handleSubmitButton(){
 	$(".js-testing-search-button-result").text("Testing search button result.").hide();
 	//when the submit button is clicked, show the text.
@@ -46,11 +52,17 @@ function handleResetButton(){
     $(".js-testing-search-button-result").hide();
     $(".js-reset-button").hide();
   });
-}//handleResetButton
+}//handleResetButton 
 function handleEveything(){
-	//handleSubmitButton();
-	//handleResetButton();
-	watchSubmit();
+	handleSubmitButton();
+	handleResetButton();
+	//watchSubmit();
 }
 
 $(handleEveything)
+
+
+
+
+
+
