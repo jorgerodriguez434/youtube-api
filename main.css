@@ -7,3 +7,10 @@
 .show{
   display: block;
 }
+.youtube-thumbnail {
+  width: 100%;
+  height: 500px;
+  border: 1px solid black;
+  background-image: url("https://timesofindia.indiatimes.com/photo/58623495.cms");
+  background-repeat: no-repeat;
+}
