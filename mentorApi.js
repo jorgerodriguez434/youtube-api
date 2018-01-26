@@ -1,56 +1,24 @@
-/*
-  When I click on a button with class search, I want to send
-  a request to external server and append the results of that request
-  to my unordered list of class results
-*/
-
-/*
-  callback functions
-*/
-
-/*
-function appendUsers(users) {
-  for(var i = 0; i < users.length; i += 1) {
-    $('.results').append('<li>'+users[i].name);
-  }
-}*/
-
-/*
-function fetch() {
-  $.ajax('https://jsonplaceholder.typicode.com/users')
-  .then(getUsers)
-  .catch(error);
-  console.log('2');
-}
-
-$('.search').click(fetch); */
+const URL = "https://jsonplaceholder.typicode.com/users";
+const PRACTICE_INFO = [{name:"Jorge"}, {name: "Erika"}];
 
 
-// A callback function is a function that is passed 
-// to another function
-// as an argument and then executed mostly passing in
-// some data
-
-function appendUsers(users){
-  users.map(person => {
-    $(".results").append(`<li>  ${person.name}`);
+function display(arrayOfData){
+  //this is going to transform the data received
+  //into HTML format
+  console.log("\'display function executed\'")
+  arrayOfData.map(user => {
+          console.log(user.name +": "+ user.phone);
+          
+          $('.results').append("<li>" + user.name+": "+user.phone);
   });
 }
-function getUsers(data) {
-  console.log('1');
-  appendUsers(data);
+function main(){
+  //this is going to execute the functions
+  $.ajax(URL).then(display);
+  //display(PRACTICE_INFO);
+  
 }
-
-function handleEverything(){
- 
-  $.ajax("https://jsonplaceholder.typicode.com/users")
-  .then(getUsers);
-
-}//handleEverything
-
-$(".search").on("click", handleEverything);
-
-
+main();
 
 
 
