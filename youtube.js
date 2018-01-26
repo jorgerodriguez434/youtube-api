@@ -1,37 +1,28 @@
-const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search";
+const PRACTICE_URL = "https://jsonplaceholder.typicode.com/users";
+const PRACTICE_INFO = [{name:"Jorge"}, {name: "Erika"}];
+const GITHUB_SEARCH_URL = 'https://api.github.com/search/repositories';
 
-function getDataFromYouTubeApi(searchTerm, callback) {
-  const query = {
-    part: "snippet", 
-    key: "AIzaSyBrEPE9JGPWkYpX06O2gMOloYSgUKXcMhQ",
-    q: `${searchTerm} in:name`,
-  }
-  $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
+function display(arrayOfData){
+  //this is going to display the data received
+  console.log("\'display function executed\'")
+  arrayOfData.map(user => {
+          console.log(user.email);
+          
+          $('.results').append("<li>" + user.email);
+  });
 }
-function handleSearchButton(){
-  $(".js-testing-search-button-result").text("Get thumbnails of the videos.").hide();
-  //when the submit button is clicked, show the text.
-  $(".js-youtube-search-form").submit("click", event => {
-    event.preventDefault();
-   $(".js-testing-search-button-result").show();
-   $(".js-reset-button").show();
-   $(".js-youtube-thumbnail").show();
-  });
-}//handleSubmitButton
-function handleResetButton(){
-  $(".js-reset-button").on("click", event => {
-    event.preventDefault();
-    $(".js-testing-search-button-result").hide();
-    $(".js-reset-button").hide();
-    $(".js-youtube-thumbnail").hide();
-  });
-}//handleResetButton 
-function handleEveything(){
-  handleSearchButton();
-  handleResetButton();
+function handleSearchButton(anyFunction){
+$('.search-button').on('click', anyFunction);
+}
+function main(){
+  //this is going to execute the functions
+  $.ajax(PRACTICE_URL).then(display);
+  //display(PRACTICE_INFO);
+  
 }
 
-$(handleEveything)
+handleSearchButton(main);
+
 
 
 
