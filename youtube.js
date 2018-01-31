@@ -1,40 +1,34 @@
 const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search";
 
-function getDataFromYouTubeApi(searchTerm, callback) {
-  const query = {
-    part: "snippet", 
+function render(data){
+  data.items.map(video  => {
+          $('.results').empty().append(
+          `
+          <li> <h1>${video.snippet.title}</h1>
+               <p>${video.snippet.description}</p>
+               <img src = "${video.snippet.thumbnails.medium.url}">
+               <iframe src="https://www.youtube.com/embed/${video.id.videoId}" </iframe>
+ 
+          `)
+  });
+}
+
+function fetch(searchTerm, callBack){
+  console.log(searchTerm);
+  const params = {
+    part: 'snippet', 
     key: "AIzaSyBrEPE9JGPWkYpX06O2gMOloYSgUKXcMhQ",
-    q: `${searchTerm} in:name`,
+    q: searchTerm,
   }
-  $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
-}
-function handleSearchButton(){
-  $(".js-testing-search-button-result").text("Get thumbnails of the videos.").hide();
-  //when the submit button is clicked, show the text.
-  $(".js-youtube-search-form").submit("click", event => {
-    event.preventDefault();
-   $(".js-testing-search-button-result").show();
-   $(".js-reset-button").show();
-   $(".js-youtube-thumbnail").show();
-  });
-}//handleSubmitButton
-function handleResetButton(){
-  $(".js-reset-button").on("click", event => {
-    event.preventDefault();
-    $(".js-testing-search-button-result").hide();
-    $(".js-reset-button").hide();
-    $(".js-youtube-thumbnail").hide();
-  });
-}//handleResetButton 
-function handleEveything(){
-  handleSearchButton();
-  handleResetButton();
+  $.getJSON(YOUTUBE_SEARCH_URL, params, callBack);
 }
 
-$(handleEveything)
-
-
-
-
+$('.search-button').on('click', event => {
+  event.preventDefault();
+  let searchTerm = $('input').val();
+  console.log(searchTerm);
+  fetch(searchTerm, render)
+ 
+});
 
 
