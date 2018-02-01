@@ -7,7 +7,7 @@ function render(data){
           <li> <h1>${video.snippet.title}</h1>
                <p>${video.snippet.description}</p>
                <img src = "${video.snippet.thumbnails.medium.url}">
-               <iframe src= "https://www.youtube.com/embed/${video.id.videoId}" title="videoTitle"  </iframe>
+               <iframe src= "https://www.youtube.com/embed/${video.id.videoId}" title="videoTitle"></iframe>
  
           `)
   });
