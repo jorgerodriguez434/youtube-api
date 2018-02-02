@@ -1,0 +1,22 @@
+body {
+	
+  color: white;
+  background-image: url('https://cdn.pixabay.com/photo/2016/08/23/15/12/youtube-1614709_1280.png');
+  background-image: cover;
+  width: 70%;
+	float: left;
+
+}
+.container {
+	width: 70%;
+	float: left;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 100px;
+	border: 1px solid grey;
+	background-color: #E76E3C;
+	
+}
+.white{
+  color:white;
+}
