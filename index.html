@@ -6,28 +6,37 @@
 	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <main role="main" >
   
+  <section class="container">
+
   <!--Headers -->
   <header role="banner">
     <h1>Youtube API Challenge</h1>
   </header>
   
-  <main role="main">
+  
     
   <!-- Form -->
-	<form class="youtube-search-form" action="#">
-	  <fieldset> 
-	    <legend>Searching Youtube Videos</legend>
-		  <input placeholder="Enter something" type="text" class="js-input">
+	<form class="youtube-search-form white" action="#">
+	   <fieldset> 
+	   <legend>Searching Youtube videos</legend>
+	    <label for="search-youtube-video"> </label>
+	    <input placeholder="Enter something" type="text" class="js-input" id="search-youtube-video">
 		  <button role="button" aria-hidden ="true" type="submit" class="search-button"> Search </button>
-		</fieldset>
+		  </fieldset>
 	</form>
 	
 	<!--Testing search button/results -->
 	<section role="region">
 	  <ul class="results "> </ul>
 	</section>
+	
+		</section> <!-- container ends -->
+		
 	</main>
+	
+
 	
 	
 	<script 
